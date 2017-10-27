@@ -12,7 +12,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<title>Home画面</title>
+	<title>板戯</title>
 	<style type="text/css">
 		body {
 		   margin:0;
@@ -69,13 +69,19 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>Home</p>
+			<h2>ボードゲーム販売サイト</h2>
+			<h1>板戯</h1>
 		</div>
+
 
 		<div id="text-center">
 			<s:form action="HomeAction">
-				<s:submit value="商品購入"/>
+				<s:submit value="商品検索"/>
 			</s:form>
+			<s:form action="GoLoginAction">
+				<s:submit value="ログイン"/>
+			</s:form>
+			<s:form></s:form>
 			<s:if test="#session.id != null">
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</s:if>
