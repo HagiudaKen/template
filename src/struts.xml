@@ -22,7 +22,7 @@
 
 		<!-- LoginAction -->
 		<action name="LoginAction" class="com.internousdev.template.action.LoginAction" method="execute">
-			<result name="success">buyItem.jsp</result>
+			<result name="success">home.jsp</result>
 			<result name="create">userCreate.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
@@ -85,6 +85,23 @@
 			<result name="success">goodsDetail.jsp</result>
 			<result name="error">mypageerror.jsp</result>
 		</action>
+
+		<action name="GoCartAction" class="com.internousdev.template.action.GoCartAction" method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="BuyItemConfirmAction" class="com.internousdev.template.action.BuyItemConfirmAction" method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="none">cart.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="BuyItemComplateAction" class="com.internousdev.template.action.BuyItemComplateAction" method="execute">
+			<result name="success">buyItemComplate.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
 
 	</package>
 </struts>

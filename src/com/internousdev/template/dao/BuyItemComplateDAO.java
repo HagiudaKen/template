@@ -15,7 +15,7 @@ public class BuyItemComplateDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "INSERT INTO user_buy_item_transaction (item_transaction_id, total_price, total_count, user_master_id, pay, insert_date) VALUES(?, ?, ?, ?, ?, ?)";
+	private String sql = "INSERT INTO user_buy_item_transaction (user_master_id, item_transaction_id, item_name, total_count, total_price,  insert_date) VALUES(?, ?, ?, ?, ?, ?)";
 
 	/**
 	 * 商品購入情報登録メソッド
@@ -27,20 +27,21 @@ public class BuyItemComplateDAO {
 	 * @param pay
 	 * @throws SQLException
 	 */
-	public void buyItemeInfo(String item_transaction_id, String user_master_id, String total_price, String total_count, String pay) throws SQLException {
+	public void buyItemeInfo(int userId, int itemId, String itemName, int count, int price, int totalPrice)
+			throws SQLException {
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, item_transaction_id);
-			preparedStatement.setString(2, total_price);
-			preparedStatement.setString(3, total_count);
-			preparedStatement.setString(4, user_master_id);
-			preparedStatement.setString(5, pay);
+			preparedStatement.setInt(1, userId);
+			preparedStatement.setInt(2, itemId);
+			preparedStatement.setString(3, itemName);
+			preparedStatement.setInt(4, count);
+			preparedStatement.setInt(5, totalPrice);
 			preparedStatement.setString(6, dateUtil.getDate());
 
 			preparedStatement.execute();
 
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			connection.close();

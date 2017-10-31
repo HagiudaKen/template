@@ -31,10 +31,11 @@ update_date datetime
 drop table if exists user_buy_item_transaction;
 create table user_buy_item_transaction(
 id int not null primary key auto_increment,
+item_name varchar(16),
 item_transaction_id int,
 total_price int,
 total_count int,
-user_master_id varchar(16),
+user_master_id int,
 pay varchar(30),
 insert_date datetime,
 delete_date datetime
@@ -73,3 +74,5 @@ insert into items(item_id,item_name,player,playtime,difficulty,price,stocks,img_
 "知らない人はいないといっても過言ではないほど世界的にも有名な2人用ゲームです。
 子供から大人までどんな人でも楽しめるとてもシンプルなルールでありながら、その奥深さでたくさんの人に愛されています。");
 
+insert into login_user_transaction(login_id, login_pass, user_name)value
+("aaa", "sss", "ddd");
